@@ -6,7 +6,7 @@
 
 <script setup>
 const products = [
-    {name: 'Laptop', price: 850, rating: 4.6},
+    {name: 'Laptop', price: 850, rating: 4.6, imageUrl: 'image.png'},
     {name:'4K Television', price: 1200, rating: 4.7},
     {name:'Keyboard', price: 40, rating: 4.9},
     {name:'PC', price: 1100, rating: 4.8},
@@ -18,8 +18,7 @@ const products = [
     {name:'Massage Gun', price: 30, rating: 4.6},
     {name:'Headphones', price: 300, rating: 4.8},
     {name:'Printer', price: 160, rating: 4.7},
-    
-]
+];
 </script>
 
 <style scoped>
