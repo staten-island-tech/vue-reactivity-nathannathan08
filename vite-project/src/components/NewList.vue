@@ -4,25 +4,25 @@
         <h3 class="product-title">{{ product.name }}</h3>
         <img :src="product.image" :alt="product.name" class="product-image" />
         <p class="product-price">${{ product.price }}</p>
-        <p class="product-rating">Rating: {{ product.rating }}</p>
+        <p class="product-rating">Rating: {{ product.rating }}/5</p>
       </div>
     </div>
   </template>
 
 <script setup>
 const products = [
-    {name: 'Laptop', price: 850, rating: 4.6, image:'computer.jpg'},
-    {name:'4K Television', price: 1200, rating: 4.7},
-    {name:'Keyboard', price: 40, rating: 4.9},
-    {name:'PC', price: 1100, rating: 4.8},
-    {name:'Wi-Fi Router', price: 150, rating: 4.7},
-    {name:'Room Humidifier', price: 30, rating: 4.4},
-    {name:'4 pack USBs', price: 10, rating: 4.5},
-    {name:'Digital Camera', price: 350, rating: 4.8},
-    {name:'Charging Wire Pack', price: 15, rating: 4.5},
-    {name:'Massage Gun', price: 30, rating: 4.6},
-    {name:'Headphones', price: 300, rating: 4.8},
-    {name:'Printer', price: 160, rating: 4.7},
+    {name: 'Laptop', price: 849.99, rating: 4.6, image:'computer.jpg'},
+    {name:'4K Television', price: 1199.99, rating: 4.7, image:'tv.jpg'},
+    {name:'Keyboard', price: 39.99, rating: 4.9, image:'board.jpg'},
+    {name:'PC', price: 1099.99, rating: 4.8, image:'pc.jpg'},
+    {name:'Wi-Fi Router', price: 149.99, rating: 4.7, image:'wifi.jpg'},
+    {name:'Room Humidifier', price: 29.99, rating: 4.4, image:'humid.jpg'},
+    {name:'4 pack USBs', price: 9.99, rating: 4.5, image:'usb.jpg'},
+    {name:'Digital Camera', price: 349.99, rating: 4.8, image:'camera.jpg'},
+    {name:'Charging Wire Pack', price: 14.99, rating: 4.5, image:'charger.jpg'},
+    {name:'Massage Gun', price: 29.99, rating: 4.6, image:'msg.jpg'},
+    {name:'Headphones', price: 299.99, rating: 4.8, image:'headphone.jpg'},
+    {name:'Printer', price: 159.99, rating: 4.7, image:'print.jpg'},
 ];
 </script>
 
