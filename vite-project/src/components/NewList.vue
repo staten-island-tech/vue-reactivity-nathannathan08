@@ -28,13 +28,24 @@ const products = [
 
 <style scoped>
 
+.home {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  width: 100%;
+  min-height: 100vh;
+}
+
 .product-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; 
+  align-items: flex-start; 
   gap: 20px;
-  justify-content: center;
+  width: 100%; 
+  margin: 0 auto; 
+  box-sizing: border-box; 
 }
-
 .product-card {
   background: #effcff;
   border: 1px solid #bafdff;
@@ -44,6 +55,7 @@ const products = [
   text-align: center;
   box-shadow: 0 4px 6px rgba(255, 0, 170, 0.1);
 }
+
 
 .product-title {
   font-size: 1.2em;
@@ -68,4 +80,14 @@ const products = [
   font-size: 1em;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+}
+
+
 </style>
+
