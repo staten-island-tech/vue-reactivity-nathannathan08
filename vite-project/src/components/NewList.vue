@@ -1,15 +1,17 @@
 <template>
     <div class="product-list">
       <div class="product-card" v-for="product in products" :key="product.name">
-        <h3 class="product-title">{{ product.name }}</h3>
-        <img :src="product.image" :alt="product.name" class="product-image" />
-        <p class="product-price">${{ product.price }}</p>
-        <p class="product-rating">Rating: {{ product.rating }}/5</p>
+      <h3 class="product-title">{{ product.name }}</h3>
+      <img :src="product.image" :alt="product.name" class="product-image" />
+      <p class="product-price">${{ product.price }}</p>
+      <p class="product-rating">Rating: {{ product.rating }}/5</p>
+      <button @click="addToCart(product)">Add to Cart</button>
       </div>
     </div>
   </template>
 
 <script setup>
+import { ref } from 'vue'; 
 const products = [
     {name: 'Laptop', price: 849.99, rating: 4.6, image:'computer.jpg'},
     {name:'4K Television', price: 1199.99, rating: 4.7, image:'tv.jpg'},
@@ -24,9 +26,40 @@ const products = [
     {name:'Headphones', price: 299.99, rating: 4.8, image:'headphone.jpg'},
     {name:'Printer', price: 159.99, rating: 4.7, image:'print.jpg'},
 ];
+
+const cart = ref([]); 
+
+
+function addToCart(product) {
+
+  const existingProduct = cart.value.find(item => item.name === product.name);
+
+  if (existingProduct) {
+    
+    cart.length += 1;
+  } else {
+    
+    cart.value.push({ ...product, quantity: 1 });
+  }
+  console.log('Item added to cart:', product);
+}
 </script>
 
 <style scoped>
+
+.product-card button {
+  background-color: #236b68;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background-color: #1e5d5a;
+}
 
 .home {
   display: flex;
@@ -58,8 +91,9 @@ const products = [
 }
 
 .product-title {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 10px;
+  color:#000e0c
 }
 
 .product-image {
@@ -80,7 +114,4 @@ const products = [
   font-size: 1em;
 }
 
-
 </style>
-
-

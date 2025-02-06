@@ -1,22 +1,26 @@
 <template>
-    <div id="app">
-      <div class="card-container">
-        <!-- Cards go here -->
-      </div>
+  <div id="app">
+    <h1>Electronics Shopping</h1>
+
+    <div class="card-container">
+      <HomeView :cart="cart" />
     </div>
-    <RouterView />
-  </template>
-  
-  <style scoped>
-  #app {
-    display: flex;
-    justify-content: center; /* This will center your cards horizontally */
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap; /* Makes sure the cards are on new lines if they don't fit */
-    gap: 20px; /* Adjust the gap between the cards */
-  }
-  </style>
-  
+
+    <div>
+      <h2>Cart Summary</h2>
+      <p>Total items in cart: {{ cart.length }}</p>
+      <p>Total Price: ${{ totalPrice }}</p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+import HomeView from './views/HomeView.vue';
+
+const cart = ref([]);
+
+const totalPrice = computed(() => {
+  return cart.value.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+});
+</script>
