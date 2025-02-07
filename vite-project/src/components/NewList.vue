@@ -11,6 +11,7 @@
   </template>
 
 <script setup>
+
 import { ref } from 'vue'; 
 const products = [
     {name: 'Laptop', price: 849.99, rating: 4.6, image:'computer.jpg'},
@@ -26,22 +27,25 @@ const products = [
     {name:'Headphones', price: 299.99, rating: 4.8, image:'headphone.jpg'},
     {name:'Printer', price: 159.99, rating: 4.7, image:'print.jpg'},
 ];
+const emit = defineEmits();
+function addToCart(product) {
+  emit('add-to-cart', product);
+}
+</script>
 
+<script>
 const cart = ref([]); 
-
-
 function addToCart(product) {
 
   const existingProduct = cart.value.find(item => item.name === product.name);
 
   if (existingProduct) {
-    
-    cart.length += 1;
+    existingProduct.quantity += 1;
   } else {
-    
     cart.value.push({ ...product, quantity: 1 });
   }
   console.log('Item added to cart:', product);
+  
 }
 </script>
 
