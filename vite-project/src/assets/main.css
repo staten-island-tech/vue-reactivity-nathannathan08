@@ -1,3 +1,4 @@
+/* main.css */
 @import './base.css';
 
 #app {
@@ -5,14 +6,6 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
 }
 
 @media (hover: hover) {
@@ -23,13 +16,15 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    /* Do not use flex or grid to position layout for now */
+    display: block;
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Remove grid or flex for the main container */
+    display: block;
     padding: 0 2rem;
+   position: relative;  /* This prevents the fixed cart from being affected by the app's grid */
+    
   }
 }

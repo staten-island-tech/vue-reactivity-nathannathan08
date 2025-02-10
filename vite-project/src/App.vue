@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <h1>Electronics Shopping</h1>
