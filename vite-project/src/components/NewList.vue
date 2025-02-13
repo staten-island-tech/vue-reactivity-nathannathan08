@@ -27,6 +27,7 @@ const products = [
     {name:'Headphones', price: 299.99, rating: 4.8, image:'headphone.jpg'},
     {name:'Printer', price: 159.99, rating: 4.7, image:'print.jpg'},
 ];
+
 const emit = defineEmits();
 function addToCart(product) {
   emit('add-to-cart', product);
@@ -34,7 +35,7 @@ function addToCart(product) {
 </script>
 
 <script>
-const cart = ref([]); 
+
 function addToCart(product) {
 
   const existingProduct = cart.value.find(item => item.name === product.name);
@@ -80,7 +81,11 @@ function addToCart(product) {
   gap: 20px;                 
   margin: 0 auto;    
   box-sizing: border-box; 
-  max-width: 1200px;      
+  max-width: 1200px;     
+  max-height: 600px;
+  overflow-y: auto;
+  margin-right:500px; 
+ 
 }
 
 .product-card {
