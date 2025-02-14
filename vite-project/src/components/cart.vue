@@ -1,25 +1,28 @@
 <template>
   <div class="cart-container">
     <h2>Your Cart</h2>
+    
+    <div v-if="cart.length > 0" class="cart-summary">
+      <p>Total items: {{ totalItems }}</p>
+      <p>Total price: ${{ totalPrice }}</p>
+    </div>
+
     <div v-if="cart.length > 0" class="cart-card-container">
       <div class="cart-card" v-for="item in cart" :key="item.name">
         <h3 class="cart-product-title">{{ item.name }}</h3>
         <img :src="item.image" :alt="item.name" class="cart-product-image" />
         <p class="cart-product-price">${{ item.price }}</p>
         <p class="cart-product-quantity">Quantity: {{ item.quantity }}</p>
-        <p class="cart-product-total">
-          Total: ${{ (item.price * item.quantity).toFixed(2) }}
-        </p>
+       
         
-        <!-- Button to remove one item -->
+        
         <button @click="removeOne(item)" :disabled="item.quantity === 1">Remove One</button>
         
-        <!-- Button to remove the item completely -->
+        
         <button @click="removeItem(item)">Remove Item</button>
       </div>
-      <p>Total items: {{ totalItems }}</p>
-      <p>Total price: ${{ totalPrice }}</p>
     </div>
+
     <div v-else>
       <p>Your cart is empty.</p>
     </div>
@@ -36,12 +39,12 @@ const props = defineProps({
   }
 });
 
-// Remove one item from the cart
+
 function removeOne(item) {
   if (item.quantity > 1) {
     item.quantity -= 1;
   } else {
-    // If quantity is 1, we can either remove the item completely or keep it at quantity 1
+   
     removeItem(item);
   }
 }

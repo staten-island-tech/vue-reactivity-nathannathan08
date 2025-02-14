@@ -12,7 +12,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import HomeView from './views/HomeView.vue';
-const cart = ref([]); // In HomeView.vue or App.vue
+const cart = ref([]); 
 
 
 const totalPrice = computed(() => {
@@ -34,13 +34,16 @@ function addToCart(product) {
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Make sure the app takes up the full height of the viewport */
+  height: 100%; 
+  overflow: hidden; 
 }
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  background-color: #d1f6ff; 
 }
+
 </style>

@@ -70,7 +70,7 @@ function addToCart(product) {
   display: flex;
   justify-content: center; 
   align-items: center;     
-  height: 100vh; 
+  height: 100%; 
   margin-right:6400px;         
 }
 
@@ -96,7 +96,7 @@ function addToCart(product) {
   width: 250px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(255, 0, 170, 0.1);
-  margin: 10px;  /* Optional: adds space between cards */
+  margin: 10px; 
 }
 
 .product-title {
